@@ -846,7 +846,7 @@ static dispatch_once_t sharedDispatchToken;
                             priority:priority
                           completion:^(NSData *data, NSError *error)
     {
-        [_concurrentOperationQueue pin_addOperationWithQueuePriority:priority block:^
+        [self->_concurrentOperationQueue pin_addOperationWithQueuePriority:priority block:^
         {
             typeof(self) strongSelf = weakSelf;
             NSError *remoteImageError = error;
